@@ -1,6 +1,6 @@
 count = 0                                                                                                      
 
-for file in open('2.txt'):                                                                                                           
+for file in open('9_2.txt'):                                                                                                           
     s = list(map(int, file.split()))                                                                                       
    
     repeat = [x for x in s if s.count(x) == 2]                                                   
