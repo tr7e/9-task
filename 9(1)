@@ -1,4 +1,4 @@
-file = open('1.txt')                                               
+file = open('9_1.txt')                                               
 s = [list(map(int, i.split())) for i in file]                      
 
 count = 0                                                            
