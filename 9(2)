@@ -1,0 +1,18 @@
+count = 0                                                                                                      
+
+for file in open('2.txt'):                                                                                                           
+    s = list(map(int, file.split()))                                                                                       
+   
+    repeat = [x for x in s if s.count(x) == 2]                                                   
+    notrepeat = [x for x in s if s.count(x) == 1]                                               
+    
+    sum_first_two = sum(s[0:2])                                                                                                   
+    sum_last_two = sum(s[2:4])                                                                                                     
+    sum_second_third = sum(s[1:3])                                                                                                                                                                                                                                                                                                                                          
+    
+    if (len(repeat) == 2 and len(notrepeat) == 2) and \
+    (sum_first_two - sum_last_two) > sum_second_third / 2 and \
+        (sum_first_two - sum_last_two) % 2 != 0 and (sum_first_two - sum_last_two) % 3 == 0:     
+            count += 1                                                                                                                                                               
+
+print(count)                                                                                  
