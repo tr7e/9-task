@@ -1,0 +1,9 @@
+file = open('1.txt')                                               
+s = [list(map(int, i.split())) for i in file]                      
+
+count = 0                                                            
+
+for i in range(len(s)):                                            
+    if sum(s[i]) >= 100 and s[i][0] < ((s[i][1] + s[i][2]) / 2):   
+        count += 1                                                 
+print(count)                                                         
