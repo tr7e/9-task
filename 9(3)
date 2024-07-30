@@ -1,0 +1,35 @@
+def summ(x):                                                
+    sum = 0
+    while x > 0:
+        sum += x % 10
+        x //= 10
+    return sum
+
+count = 0                                                                  
+sum_answer = 0                                                
+
+for file in open('9_3.txt'):                                                               
+    s = list(map(int, file.split()))                                        
+
+    repeat = [x for x in s if s.count(x) == 3]                                
+    not_repeat = [x for x in s if s.count(x) == 1]                             
+
+    sr_repeat = ((sum(repeat[0:3])) / 3)                     
+
+    thousands = [x for x in s if 1000 <= x <= 9999]         
+    
+    sum_first_four = sum(s[0:4])                                         
+
+    minimal_number = min([x for x in s])                   
+
+    if (len(repeat) == 3 and len(not_repeat) == 4) and\
+    sum_first_four > s[5] * s[6] and\
+        sr_repeat % 5 == 0 and\
+            (thousands[0]) in s and\
+                summ(minimal_number) % 2 == 0:              
+                    
+                    count += 1                              
+
+    sum_answer = sum(map(int, str(count)))                  
+
+print(sum_answer)                                           
